@@ -1,6 +1,20 @@
-## NOTE: This is a Python 3 port
+![pyxl4 logo](pyxl4.png?raw=true)
+# pyxl4
 
-For Python 2, see https://github.com/dropbox/pyxl
+Note this is a **fork** of GvR's Python 3 port which is now unmaintained:
+https://github.com/gvanrossum/pyxl3
+
+The objectives of this fork (provisionally named pyxl4 to differentiate from
+its unmaintained parent) are to give the project some TLC and hopefully, a new lease of life:
+
+1. Host on PyPI to enable `pip install pyxl4`.
+2. Fix broken tests.
+2. Backport compatibility to Python 2.7
+3. Some other minor [issues](https://github.com/pyxl4/pyxl4/issues).
+
+For the original Python 2-only project, see https://github.com/dropbox/pyxl
+
+Original README follows:
 
 Pyxl is an open source package that extends Python to support inline HTML. It converts HTML fragments into valid Python expressions, and is meant as a replacement for traditional python templating systems like [Mako](http://www.makotemplates.org/) or [Cheetah](http://www.cheetahtemplate.org/). It automatically escapes data, enforces correct markup and makes it easier to write reusable and well structured UI code. Pyxl was inspired by the [XHP](https://github.com/facebook/xhp/wiki) project at Facebook.
 
