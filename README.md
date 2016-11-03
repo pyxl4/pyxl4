@@ -43,26 +43,19 @@ This meant no longer dealing with a separate "templating" language, and a lot mo
 
 ## Installation
 
-Clone the repo and run the following commands from the directory you cloned to.  (Sudo not needed if you use a virtualenv.)
+This fork is still in pre-release phase so please use the `--pre` flag:
 
 ```sh
-sudo python3 -m pip install .
-sudo python3 finish_install.py
+pip install --pre pyxl4
 ```
 
-To confirm that Pyxl was correctly installed, run the following command from the same directory:
+## Contributing
+
+Pull requests welcome, but please make sure the tests pass. Once you've cloned
+this repo:
 
 ```sh
-python3 pyxl/examples/hello_world.py
-```
-
-You should see the string `<html><body>Hello World!</body></html>` printed out. Thats it! You're ready to use Pyxl.
-
-## Running the tests
-
-After installing pyxl:
-
-```sh
+pip install --editable .
 pip install pytest
 pytest tests
 ```
