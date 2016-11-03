@@ -1,24 +1,17 @@
-#!/usr/bin/env python
+from setuptools import setup
+from distutils.sysconfig import get_python_lib
 
-import distutils.core
-import sys
+version = "1.0.0a1"
 
-version = "1.0"
+SITE_PACKAGES_PATH = get_python_lib()
 
-distutils.core.setup(
-    name="pyxl",
+setup(
+    name="pyxl4",
     version=version,
-    packages = ["pyxl", "pyxl.codec", "pyxl.scripts"],
-    author="Akhil Wable",
-    author_email="akhil.wable@gmail.com",
-    url="http://github.com/awable/pyxl",
-    download_url="http://github.com/downloads/awable/pyxl/pyxl-%s.tar.gz" % version,
-    license="http://www.apache.org/licenses/LICENSE-2.0",
-    description="""
-        Pyxl is an open source package that extends Python to support inline HTML. It converts
-        HTML fragments into valid Python expressions, and is meant as a replacement for traditional
-        python templating systems like Mako or Cheetah. It automatically escapes data, enforces
-        correct markup and makes it easier to write reusable and well structured UI code.
-        Pyxl was inspired by the XHP project at Facebook.
-    """
+    packages=["pyxl", "pyxl.codec", "pyxl.scripts"],
+    url="https://github.com/pyxl4/pyxl4",
+    description="Extend Python syntax with HTML.",
+    maintainer="Adam Serafini",
+    maintainer_email="adam@adamserafini.com",
+    data_files=[(SITE_PACKAGES_PATH, ['pyxl.pth'])]
 )
