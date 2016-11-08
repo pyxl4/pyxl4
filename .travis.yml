@@ -1,12 +1,14 @@
 language: python
 python:
-- '3.2'
-- '3.3'
-- '3.4'
-- '3.5'
+  - '3.2'
+  - '3.3'
+  - '3.4'
+  - '3.5'
 notifications:
   email: false
-install: pip install .
+install:
+  - pip install .
+  - pip install pytest
 script: pytest tests
 deploy:
   provider: pypi
