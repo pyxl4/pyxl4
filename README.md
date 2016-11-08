@@ -1,5 +1,4 @@
-![pyxl4 logo](pyxl4.png?raw=true)
-# pyxl4
+# pyxl4 [![Build Status](https://travis-ci.org/pyxl4/pyxl4.svg?branch=master)](https://travis-ci.org/pyxl4/pyxl4)
 
 Note this is a **fork** of GvR's Python 3 port which is now unmaintained:
 https://github.com/gvanrossum/pyxl3
