@@ -51,13 +51,15 @@ pip install --pre pyxl4
 
 ## Contributing
 
-Pull requests welcome, but please make sure the tests pass. Once you've cloned
-this repo:
+Pull requests welcome, but please make sure the tests pass. The project uses
+`tox` to ensure the program runs on multiple versions of Python. If you do not
+already have `tox` installed system-wide, install it with `pip install tox`.
+Once you've cloned the repo, run `tox` from within the project directory to
+run the tests over multiple versions of Python. Or, if you just want to run the
+tests for `py32`
 
 ```sh
-pip install --editable .
-pip install pytest
-pytest tests
+tox -e py32
 ```
 
 ## How it works
