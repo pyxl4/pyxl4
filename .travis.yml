@@ -9,7 +9,7 @@ notifications:
 install:
   - pip install .
   - pip install pytest
-script: pytest tests
+script: py.test tests
 deploy:
   provider: pypi
   user: adamserafini
