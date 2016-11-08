@@ -8,7 +8,6 @@ notifications:
   email: false
 install:
   - pip install .
-  - pip install pytest
 script: py.test tests
 deploy:
   provider: pypi
