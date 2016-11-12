@@ -9,7 +9,7 @@ install:
   - pip install .
   - pip install pytest-cov
   - pip install coveralls
-script: py.test --cov-report term-missing --cov=pyxl tests
+script: py.test tests
 deploy:
   provider: pypi
   user: adamserafini
