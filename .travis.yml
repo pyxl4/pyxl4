@@ -8,7 +8,6 @@ notifications:
 install:
   - pip install .
   - pip install pytest-cov
-  - pip install coveralls
 script: py.test --cov=pyxl tests
 deploy:
   provider: pypi
@@ -18,4 +17,8 @@ deploy:
   on:
     tags: true
 after_success:
-  - coveralls
+  # Only submit coverage for the latest version of Python.
+  - |
+    if [[ $TRAVIS_PYTHON_VERSION == 3.5 ]]; then
+      pip install python-coveralls && coveralls
+    fi
