@@ -6,8 +6,9 @@ python:
 notifications:
   email: false
 install:
-  - pip install .
-script: py.test tests
+  - pip install --editable .
+  - pip install pytest-cov
+script: py.test --cov=pyxl tests
 deploy:
   provider: pypi
   user: adamserafini
@@ -15,3 +16,9 @@ deploy:
     secure: c6/zPEADfB5UQvrGIiYckhx86UCaQdaua1eTteZWU7dr4yFtcSeNnOzNTRAXHgN/vBQcp+Ym+OUPdWCdOHrVe+nS4n38vDXrGjKtPPLIMLQzbpei5y0e67e3ZM5UrqpvTV0hZgfr/q1anKX/edI4Pnb8YoWSDY9qGhajpBTnxyIz/IQ02G4Gk6m9YfyBG0l8E7s2eBiW6SpAoZBaNCmFCZXTVUuAskLgz95Ex4PKqLrrf3/igWKZMxbQwJqnMt7nSMyopJ5yiIi+wu3huy5jk9p6+wTINLhUmP5M+AIIZxSpzp4+zSNJGB2RRiEfOejfw5NWzdGavWQP8dJ0Na9Vrs70FreP4r/EOXujPxiSNLsZdm9kqFWIitMlDLCHOPhFWkjAfK448ODqP8nhYEPTSAtNds1woawPL9GeiRQ8278PEmZpqTDi3UxLzzn72OwJBu23Fljlmujl2JX7WDotbEZDDgHWwvcczHHnbirUe8OYccOAvIMf4uRLow2Y4R46jXmbSKGCclZmJGJwQ6XuHzSOfmdi0jiIJzV2XjQmgk/TZ4o4Q96Py8i7Ga2GE/A/Ae1wsbJjBCtngtmG3VsBZSVY9fm9rgGE5tXkrIG/qRfKOui3HnGeXPJ5k0ijtTfAoYJX00x8cWN5LZfKooHtJUpDM7ajLgX6gjcvW412i9k=
   on:
     tags: true
+after_success:
+  # Only submit coverage for the latest version of Python.
+  - |
+    if [[ $TRAVIS_PYTHON_VERSION == 3.5 ]]; then
+      pip install python-coveralls && coveralls
+    fi
