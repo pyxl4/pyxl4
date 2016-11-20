@@ -6,7 +6,7 @@ python:
 notifications:
   email: false
 install:
-  - pip install .
+  - pip install --editable .
   - pip install pytest-cov
 script: py.test --cov=pyxl tests
 deploy:
