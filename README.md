@@ -1,4 +1,4 @@
-# pyxl4 [![Build Status](https://travis-ci.org/pyxl4/pyxl4.svg?branch=master)](https://travis-ci.org/pyxl4/pyxl4)
+# pyxl4 [![Build Status](https://travis-ci.org/pyxl4/pyxl4.svg?branch=master)](https://travis-ci.org/pyxl4/pyxl4) [![Coverage Status](https://coveralls.io/repos/github/pyxl4/pyxl4/badge.svg)](https://coveralls.io/github/pyxl4/pyxl4)
 
 Note this is a **fork** of GvR's Python 3 port which is now unmaintained:
 https://github.com/gvanrossum/pyxl3
