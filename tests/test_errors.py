@@ -3,6 +3,7 @@ import pytest
 
 from pyxl.codec.register import pyxl_decode
 from pyxl.codec.parser import ParseError
+from pyxl.codec.html_tokenizer import BadCharError
 
 def test_malformed_if():
     with pytest.raises(ParseError):
@@ -29,3 +30,7 @@ def test_nested_else():
                 <if cond="{true}">foo</if>
                 <else><else>bar</else></else>
             </frag>""")
+
+def test_bad_char():
+    with pytest.raises(BadCharError):
+        pyxl_decode(b"""<_bad_element></lm>""")
