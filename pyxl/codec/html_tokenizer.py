@@ -43,7 +43,8 @@ class State(object):
         for k, v in cls.__dict__.items():
             if v == state_val:
                 return k
-        assert False, "impossible state value %r!" % state_val
+        # TODO: This should be an exception rather than an assertion.
+        assert False, "impossible state value %r!" % state_val # pragma: no cover
 
 class Tag(object):
     def __init__(self):
@@ -78,25 +79,29 @@ class HTMLTokenizer(object):
         self.attribute_value = None
         self.markup_declaration_buffer = None
 
-    def handle_data(self, data):
+    # TODO: There are better ways to implement this. Abstract Base Class or
+    # at least raising NotImplementedError instead of asserting in the below
+    # methods.
+
+    def handle_data(self, data): # pragma: no cover
         assert False, "subclass should override"
 
-    def handle_starttag(self, tag_name, attrs):
+    def handle_starttag(self, tag_name, attrs): # pragma: no cover
         assert False, "subclass should override"
 
-    def handle_startendtag(self, tag_name, attrs):
+    def handle_startendtag(self, tag_name, attrs): # pragma: no cover
         assert False, "subclass should override"
 
-    def handle_endtag(self, tag_name):
+    def handle_endtag(self, tag_name): # pragma: no cover
         assert False, "subclass should override"
 
-    def handle_comment(self, tag_name):
+    def handle_comment(self, tag_name): # pragma: no cover
         assert False, "subclass should override"
 
-    def handle_doctype(self, data):
+    def handle_doctype(self, data): # pragma: no cover
         assert False, "subclass should override"
 
-    def handle_cdata(self, tag_name):
+    def handle_cdata(self, tag_name): # pragma: no cover
         assert False, "subclass should override"
 
     def emit_data(self):
