@@ -31,6 +31,10 @@ def test_nested_else():
                 <else><else>bar</else></else>
             </frag>""")
 
-def test_bad_char():
+def test_bad_char1():
     with pytest.raises(BadCharError):
-        pyxl_decode(b"""<_bad_element></lm>""")
+        pyxl_decode(b'<_bad_element></lm>')
+
+def test_bad_char2():
+    with pytest.raises(BadCharError):
+        pyxl_decode(b'<div class="foo"=></div>')
