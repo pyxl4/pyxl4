@@ -10,6 +10,7 @@ def test_basics():
     assert str(<div class="c"></div>) == '<div class="c"></div>'
     assert str(<div><span></span></div>) == '<div><span></span></div>'
     assert str(<frag><span /><span /></frag>) == '<span></span><span></span>'
+    assert str(<img/>) == '<img />'
 
 def test_escaping():
     assert str(<div class="&">&{'&'}</div>) == '<div class="&amp;">&&amp;</div>'

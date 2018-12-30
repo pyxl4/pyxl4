@@ -8,13 +8,7 @@ from encodings import utf_8
 from pyxl.codec.tokenizer import pyxl_tokenize, pyxl_untokenize
 
 def pyxl_transform(stream):
-    try:
-        output = pyxl_untokenize(pyxl_tokenize(stream.readline))
-    except Exception as ex:
-        print(ex)
-        traceback.print_exc()
-        raise
-
+    output = pyxl_untokenize(pyxl_tokenize(stream.readline))
     return output.rstrip()
 
 def pyxl_transform_string(input):
